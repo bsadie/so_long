@@ -9,9 +9,6 @@ INCLUDES = so_long.h
 
 SRCS = main.c input.c help.c
 
-
-
-
 OBJS = $(SRCS:.c=.o)
 
 sll: $(NAME)

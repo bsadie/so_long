@@ -1,17 +1,23 @@
 .PHONY: all clean fclean re
 
 CC = clang
-CFLAGS= -Wall -Wextra -Werror -c
+CFLAGS= -Wall -Wextra -Werror -g 
 
 NAME = so_long
 
 INCLUDES = so_long.h
 
-SRCS = main.c input.c help.c
+SRCS = main.c					\
+		input.c					\
+		help.c					\
+		check_args.c			\
+		check_is_closed.c		\
+		check_is_contents.c		\
+		check_is_rectangular.c
 
 OBJS = $(SRCS:.c=.o)
 
-sll: $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS) $(INCLUDES)
 	$(CC) -o $(NAME) $(OBJS)

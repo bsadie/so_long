@@ -1,7 +1,7 @@
 .PHONY: all clean fclean re
 
 CC = clang
-CFLAGS= -Wall -Wextra -Werror -g 
+CFLAGS= -Wall -Wextra -Werror -g
 
 NAME = so_long
 
@@ -13,17 +13,26 @@ SRCS = main.c					\
 		check_args.c			\
 		check_is_closed.c		\
 		check_is_contents.c		\
-		check_is_rectangular.c
+		check_is_rectangular.c	\
+		graphics.c
 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(INCLUDES)
-	$(CC) -o $(NAME) $(OBJS)
+%.o: %.c
+	$(CC) $(CFLAGS) -Imlx -c $< -o $@
 
-SRCS.O: $(SRCS) $(INCLUDES)
-	$(CC) $(CFLAGS) $(SRCS)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+
+
+
+#$(NAME): $(OBJS) $(INCLUDES)
+#	$(CC) -o $(NAME) $(OBJS)
+
+#SRCS.O: $(SRCS) $(INCLUDES)
+#	$(CC) $(CFLAGS) $(SRCS)
 
 b:
 	$(CC) $(CFLAGS) -g $(SRCS)

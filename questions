@@ -1,0 +1,4 @@
+#1 args mlx_hook : can be .. (void *)ptr?
+mlx_hook(mem->vars->win, 2, 1L << 0, key_hook, mem); 
+mlx_hook(vars.win, 2, 1L<<0, close, &vars);
+all args must be in mem;

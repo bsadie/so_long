@@ -9,6 +9,7 @@ INCLUDES = so_long.h
 
 SRCS = main.c					\
 		input.c					\
+		init_memory.c			\
 		help.c					\
 		check_args.c			\
 		check_is_closed.c		\
@@ -16,23 +17,24 @@ SRCS = main.c					\
 		check_is_rectangular.c	\
 		graphics.c
 
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+#%.o: %.c
+#	$(CC) $(CFLAGS) -Imlx -c $< -o $@
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+#$(NAME): $(OBJS)
+#	$(CC) $(CFLAGS) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 
 
-#$(NAME): $(OBJS) $(INCLUDES)
-#	$(CC) -o $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(INCLUDES)
+	$(CC) -o $(NAME) $(OBJS)
 
-#SRCS.O: $(SRCS) $(INCLUDES)
-#	$(CC) $(CFLAGS) $(SRCS)
+SRCS.O: $(SRCS) $(INCLUDES)
+	$(CC) $(CFLAGS) $(SRCS)
 
 b:
 	$(CC) $(CFLAGS) -g $(SRCS)

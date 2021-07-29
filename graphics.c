@@ -1,5 +1,5 @@
 #include "so_long.h"
-
+/*
 void	ft_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
@@ -110,5 +110,5 @@ void	graphics_experience(void)
 
 	mlx_loop(vars.mlx);
 }
-
+*/
 

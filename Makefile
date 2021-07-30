@@ -22,19 +22,19 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-#%.o: %.c
-#	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+%.o: %.c
+	$(CC) $(CFLAGS) -Imlx -c $< -o $@
 
-#$(NAME): $(OBJS)
-#	$(CC) $(CFLAGS) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 
 
-$(NAME): $(OBJS) $(INCLUDES)
-	$(CC) -o $(NAME) $(OBJS)
+#$(NAME): $(OBJS) $(INCLUDES)
+#	$(CC) -o $(NAME) $(OBJS)
 
-SRCS.O: $(SRCS) $(INCLUDES)
-	$(CC) $(CFLAGS) $(SRCS)
+#SRCS.O: $(SRCS) $(INCLUDES)
+#	$(CC) $(CFLAGS) $(SRCS)
 
 b:
 	$(CC) $(CFLAGS) -g $(SRCS)

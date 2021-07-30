@@ -30,12 +30,27 @@ typedef struct s_vars {
 	void	*win;
 }				t_vars;
 
+typedef struct s_imgs
+{
+	void	*floor;
+	void	*wall;
+	void	*collect;
+	void	*player;
+	void	*exit;
+}				t_imgs;
+
 typedef struct s_so_long
 {
 	char	*map_as_line;
 	char	**map_as_array;
 	int		map_lines;
 	int		map_collumns;
+	t_vars	*vars;
+	t_data	*img;
+	t_imgs	*textures;
+	int		player_i;
+	int		player_j;
+	int		collect_count;
 
 }				t_so_long;
 
@@ -55,7 +70,12 @@ void	check_map_contents(char *map);
 
 void	convert_map_line_to_array(t_so_long *memory);
 void	count_lines_and_collumns(t_so_long *memory);
+void	find_player_position(t_so_long *memory);
+void	count_collectibles(t_so_long *memory);
 
 void	graphics_experience(void);
+void	init_graphics(t_so_long *memory);
+void	display_graphics(t_so_long *memory);
+int		key_hook(int keycode, t_so_long *memory);
 
 #endif

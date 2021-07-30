@@ -14,8 +14,13 @@ t_so_long	*init_memory(void)
 		(rtn->map_as_array)[i] = malloc(MAP_SIZE_OX);
 		i++;
 	}
+
+
+
 	rtn->map_collumns = 0;
-	rtn->map_lines =0;
+	rtn->map_lines = 0;
+	rtn->collect_count = 0;
+
 	return (rtn);
 
 }

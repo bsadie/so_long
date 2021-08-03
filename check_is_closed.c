@@ -5,14 +5,10 @@ void	check_is_closed_top(char *map)
 	int	map_len;
 	int	str_len;
 	int	i;
-	//int	j;
-	//int	str_count;
 
 	map_len = ft_strlen(map);
 	str_len = ft_strlen_n(map);
 	i = 0;
-	//j = 0;
-	//str_count = map_len / (str_len + 1);
 	while (i < str_len)
 	{
 		if (map[i] != '1')
@@ -22,7 +18,6 @@ void	check_is_closed_top(char *map)
 		}
 		i++;
 	}
-
 }
 
 void	check_is_closed_left(char *map)

@@ -13,9 +13,9 @@ void	check_is_exit(char *map)
 			rtn++;
 		i++;
 	}
-	if (rtn == 0)
+	if (rtn != 1)
 	{
-		printf("Map has no exit\n");
+		printf("Map has bad exit\n");
 		exit(EXIT_FAILURE);
 	}
 }

@@ -44,12 +44,12 @@ void	check_args(int argc, char *argv[])
 			argv[1][i - 2] == 'e' && \
 			argv[1][i - 3] == 'b' && \
 			argv[1][i - 4] == '.')
-				return ;
+			return ;
 		else
-			{
-				printf("File name error\n");
-				exit(EXIT_FAILURE);
-			}
+		{
+			printf("File name error\n");
+			exit(EXIT_FAILURE);
+		}
 	}
 	else
 	{

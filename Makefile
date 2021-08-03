@@ -8,7 +8,10 @@ NAME = so_long
 INCLUDES = so_long.h
 
 SRCS = main.c					\
+		actions.c				\
+		action_hook.c			\
 		input.c					\
+		input2.c				\
 		init_memory.c			\
 		help.c					\
 		check_args.c			\

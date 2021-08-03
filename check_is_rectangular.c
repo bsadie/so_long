@@ -6,11 +6,8 @@ void	check_is_rectangular(char *map)
 	int	i;
 	int	cur_ox;
 	int	prev_ox;
-//	int	j;
-//	int	cur_oy;
 
 	i = 0;
-	//j = 0;
 	k = 1;
 	prev_ox = ft_strlen_n(&map[i]);
 	while (map[i + prev_ox + 1])
@@ -23,6 +20,5 @@ void	check_is_rectangular(char *map)
 			exit(EXIT_FAILURE);
 		}
 		prev_ox = cur_ox;
-		//i += i;
 	}
 }
